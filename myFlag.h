@@ -2,8 +2,8 @@
 #include "MyFloat.h"
 #define MAX_M 9999
 #define MIN_M -9999
-#define MAX_E 99
-#define MIN_E -99
+#define MAX_E 31
+#define MIN_E -31
 
 
 class myFlag : public MyFloat {
@@ -14,9 +14,14 @@ public:
 	myFlag(): MyFloat() {}
 	myFlag(double d) : MyFloat(d) { checkSatur(); }
 	myFlag(int m, int e, bool f=0) : MyFloat(m, e), flg(f) { checkSatur(); }
-	//myFlag(const myFlag &fl) : MyFloat(fl.getMant(), fl.getExp()) { checkSatur(); }
+	myFlag(MyFloat fl) : MyFloat(fl) { checkSatur(); }
+	myFlag(const myFlag &fl) : MyFloat(fl) { checkSatur(); }
 	void printFlag();
 	void checkSatur();
 	bool getFlag();
 	void setFlag(bool);
+	friend myFlag operator +(myFlag, myFlag);
+	friend myFlag operator -(myFlag, myFlag);
+	friend myFlag operator *(myFlag, myFlag);
+	friend myFlag operator /(myFlag, myFlag);
 };

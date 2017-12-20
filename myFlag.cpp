@@ -37,3 +37,33 @@ bool myFlag::getFlag() {
 void myFlag::setFlag(bool f) {
 	flg = f;
 }
+
+myFlag operator+(myFlag a, myFlag b) {
+	myFlag result;
+	result = myFlag((MyFloat) a + (MyFloat) b);
+	result.checkSatur();
+	return result;
+}
+
+myFlag operator-(myFlag a, myFlag b) {
+	myFlag result;
+	result = myFlag((MyFloat) a - (MyFloat) b);
+	result.checkSatur();
+	return result;
+}
+
+myFlag operator*(myFlag a, myFlag b) {
+	myFlag result;
+	result = myFlag((MyFloat) a * (MyFloat) b);
+	result.checkSatur();
+	return result;
+}
+
+myFlag operator/(myFlag a, myFlag b) {
+	myFlag result;
+	result = myFlag((MyFloat) a / (MyFloat) b);
+	result.checkSatur();
+	return result;
+}
+
+

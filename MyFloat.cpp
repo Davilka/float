@@ -2,29 +2,29 @@
 // Created by davilka on 09.11.17.
 //
 
-#include <stdio.h>
 #include <iostream>
 #include "MyFloat.h"
 
 using namespace std;
 
 void MyFloat::print(void) {
-    //printf("\nMant+Exp: %1.4f*2**%d Mant: %d Exp: %d Restored: %f",((double) getMant())/10000, getExp(), getMant(), getExp(), this->restore());
+	//printf("\nMant+Exp: %1.4f*2**%d Mant: %d Exp: %d Restored: %f",((double) getMant())/10000, getExp(), getMant(), getExp(), this->restore());
 	//printf("\nMant: %4d, Exp: %d", this->mant, this->exp);
-	cout<<"Mant: "<<getMant()<<", Exp: "<<getExp()<<", Restored: "<<restore()<<endl;
+	cout << "Mant: " << getMant() << ", Exp: " << getExp() << ", Restored: " << restore() << endl;
 }
 
 double MyFloat::restore() {
-    double fmant;
+	double fmant;
 	int mant, exp;
 	mant = getMant();
 	exp = getExp();
-    fmant = (double) mant/10000;
-    while (exp > 0) {
-	    fmant *= 2;
-	    exp--;
-    }
-	while (expn < 0) {
+	fmant = (double) mant / 10000;
+	while (exp > 0) {
+		
+		fmant *= 2;
+		exp--;
+	}
+	while (exp < 0) {
 		fmant /= 2;
 		exp++;
 	}
@@ -35,7 +35,7 @@ int MyFloat::getMant() {
 	return mant;
 }
 
-void MyFloat::setMant(int m)  {
+void MyFloat::setMant(int m) {
 	mant = m;
 }
 
@@ -43,7 +43,7 @@ int MyFloat::getExp() {
 	return expn;
 }
 
-void MyFloat::setExp(int e)  {
+void MyFloat::setExp(int e) {
 	expn = e;
 }
 
@@ -61,7 +61,7 @@ MyFloat operator+(MyFloat a, MyFloat b) {
 		amant /= 2;
 		aexp++;
 	}
-	return MyFloat(amant+bmant, aexp);
+	return MyFloat(amant + bmant, aexp);
 }
 
 MyFloat operator-(MyFloat a, MyFloat b) {
@@ -78,14 +78,22 @@ MyFloat operator-(MyFloat a, MyFloat b) {
 		amant /= 2;
 		aexp++;
 	}
-	return MyFloat(amant-bmant, aexp);
+	return MyFloat(amant - bmant, aexp);
 }
 
 MyFloat operator*(MyFloat a, MyFloat b) {
-	return MyFloat((a.mant*b.mant)/10000, a.expn+b.expn);
+	return MyFloat((a.getMant() * b.getMant()) / 10000, a.getExp() + b.getExp());
 }
 
-//MyFloat operator/(MyFloat a, MyFloat b) {}
+MyFloat operator/(MyFloat a, MyFloat b) {
+	if (b.getMant() != 0) {
+		return MyFloat((a.getMant() / b.getMant()) * 10000, a.getExp() - b.getExp());
+	} else {
+		cout << "Error: Divide by Zero" << endl;
+		exit(-1);
+	}
+}
+
 
 
 

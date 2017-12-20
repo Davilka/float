@@ -45,6 +45,10 @@ public:
 		setMant(m);
 		setExp(e);
 	}
+	MyFloat(MyFloat const &f) {
+		setMant(f.mant);
+		setExp(f.expn);
+	}
 
 	void print();
     double restore();
@@ -56,7 +60,7 @@ public:
     friend MyFloat operator +(MyFloat, MyFloat);
     friend MyFloat operator -(MyFloat, MyFloat);
     friend MyFloat operator *(MyFloat, MyFloat);
-    //friend MyFloat operator /(MyFloat, MyFloat);
+    friend MyFloat operator /(MyFloat, MyFloat);
 };
 
 
