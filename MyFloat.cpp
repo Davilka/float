@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void MyFloat::print(void) {
+void MyFloat::print() {
 	//printf("\nMant+Exp: %1.4f*2**%d Mant: %d Exp: %d Restored: %f",((double) getMant())/10000, getExp(), getMant(), getExp(), this->restore());
 	//printf("\nMant: %4d, Exp: %d", this->mant, this->exp);
 	cout << "Mant: " << getMant() << ", Exp: " << getExp() << ", Restored: " << restore() << endl;
@@ -20,7 +20,6 @@ double MyFloat::restore() {
 	exp = getExp();
 	fmant = (double) mant / 10000;
 	while (exp > 0) {
-		
 		fmant *= 2;
 		exp--;
 	}
