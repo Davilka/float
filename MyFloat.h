@@ -1,6 +1,7 @@
 //
 // Created by davilka on 09.11.17.
 //
+
 #pragma once
 #ifndef FLOAT_MYFLOAT_H
 #define FLOAT_MYFLOAT_H
@@ -10,11 +11,6 @@ private:
 	int mant;
 	int expn;
 public:
-	/*
-	MyFloat();
-	MyFloat(double);
-	MyFloat(int, int);
-	 */
 	MyFloat() {}
 
 	MyFloat(double v) {
@@ -45,6 +41,7 @@ public:
 		setMant(m);
 		setExp(e);
 	}
+
 	MyFloat(MyFloat const &f) {
 		setMant(f.mant);
 		setExp(f.expn);

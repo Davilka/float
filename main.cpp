@@ -6,13 +6,9 @@ using namespace std;
 
 int main() {
 	double v1, v2;
-    //printf("%s", "\nВведите число 1: ");
 	cout<<endl<<"Введите число 1: ";
-    //scanf("%lf", &v1);
 	cin>>v1;
-    //printf("%s", "\nВведите число 2: ");
 	cout<<endl<<"Введите число 2: ";
-    //scanf("%lf", &v2);
 	cin>>v2;
 	MyFloat first(v1);
     MyFloat second(v2);

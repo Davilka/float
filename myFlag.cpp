@@ -27,6 +27,7 @@ void myFlag::checkSatur() {
 }
 
 void myFlag::printFlag() {
+	if (flg)
 	cout<<"*"<<endl;
 }
 
@@ -36,6 +37,10 @@ bool myFlag::getFlag() {
 
 void myFlag::setFlag() {
 	flg = true;
+}
+
+void myFlag::dropFlag() {
+	flg = false;
 }
 
 myFlag operator+(myFlag a, myFlag b) {
@@ -65,5 +70,3 @@ myFlag operator/(myFlag a, myFlag b) {
 	result.checkSatur();
 	return result;
 }
-
-

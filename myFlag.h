@@ -1,3 +1,6 @@
+//
+// Created by davilka on 07.12.17.
+//
 #pragma once
 #include "MyFloat.h"
 #define MAX_M 9999
@@ -7,7 +10,6 @@
 
 
 class myFlag : public MyFloat {
-//private:
 private:
 	bool flg;
 public:
@@ -20,6 +22,7 @@ public:
 	void checkSatur();
 	bool getFlag();
 	void setFlag();
+	void dropFlag();
 	friend myFlag operator +(myFlag, myFlag);
 	friend myFlag operator -(myFlag, myFlag);
 	friend myFlag operator *(myFlag, myFlag);

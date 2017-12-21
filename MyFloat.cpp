@@ -92,8 +92,3 @@ MyFloat operator/(MyFloat a, MyFloat b) {
 		exit(-1);
 	}
 }
-
-
-
-
-
