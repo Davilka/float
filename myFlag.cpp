@@ -12,12 +12,12 @@ void myFlag::checkSatur() {
 	int exp;
 	exp = getExp();
 	if (exp > MAX_E) {
-		setFlag(1);
+		setFlag();
 		printFlag();
 		setMant(MAX_M);
 		setExp(MAX_E);
 	} else if ( exp < MIN_E ) {
-		setFlag(1);
+		setFlag();
 		printFlag();
 		setMant(MIN_M);
 		setExp(MIN_E);
@@ -34,8 +34,8 @@ bool myFlag::getFlag() {
 	return flg;
 }
 
-void myFlag::setFlag(bool f) {
-	flg = f;
+void myFlag::setFlag() {
+	flg = true;
 }
 
 myFlag operator+(myFlag a, myFlag b) {

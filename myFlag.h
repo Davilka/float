@@ -19,7 +19,7 @@ public:
 	void printFlag();
 	void checkSatur();
 	bool getFlag();
-	void setFlag(bool);
+	void setFlag();
 	friend myFlag operator +(myFlag, myFlag);
 	friend myFlag operator -(myFlag, myFlag);
 	friend myFlag operator *(myFlag, myFlag);
