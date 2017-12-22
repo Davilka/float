@@ -13,12 +13,12 @@ class myFlag : public MyFloat {
 private:
 	bool flg;
 public:
-	myFlag(): MyFloat() {}
+	myFlag(): MyFloat() { checkSatur(); }
 	myFlag(double d) : MyFloat(d) { checkSatur(); }
 	myFlag(int m, int e, bool f=0) : MyFloat(m, e), flg(f) { checkSatur(); }
 	myFlag(MyFloat fl) : MyFloat(fl) { checkSatur(); }
 	myFlag(const myFlag &fl) : MyFloat(fl) { checkSatur(); }
-	void printFlag();
+	void print();
 	void checkSatur();
 	bool getFlag();
 	void setFlag();

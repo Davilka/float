@@ -11,24 +11,23 @@ using namespace std;
 void myFlag::checkSatur() {
 	int exp;
 	exp = getExp();
+	dropFlag();
 	if (exp > MAX_E) {
 		setFlag();
-		printFlag();
 		setMant(MAX_M);
 		setExp(MAX_E);
+		print();
 	} else if ( exp < MIN_E ) {
 		setFlag();
-		printFlag();
 		setMant(MIN_M);
 		setExp(MIN_E);
-	} else {
-		setFlag(0);
+		print();
 	}
 }
 
-void myFlag::printFlag() {
-	if (flg)
-	cout<<"*"<<endl;
+void myFlag::print() {
+	if ( flg != 0 ) cout<<"*";
+	MyFloat::print();
 }
 
 bool myFlag::getFlag() {

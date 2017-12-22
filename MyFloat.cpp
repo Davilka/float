@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <typeinfo>
 #include "MyFloat.h"
 
 using namespace std;

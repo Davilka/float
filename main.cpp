@@ -44,13 +44,14 @@ int main() {
 	flMult = fl1 * fl2;
 	flDiv = fl1 / fl2;
 
-	cout<<endl<<"Sum: ";
+	cout<<endl<<endl;
+	cout<<endl<<"Flag Sum: ";
 	flSum.print();
-	cout<<endl<<"Res: ";
+	cout<<endl<<"Flag Res: ";
 	flRes.print();
-	cout<<endl<<"Mult: ";
+	cout<<endl<<"Flag Mult: ";
 	flMult.print();
-	cout<<endl<<"Div: ";
+	cout<<endl<<"Flag Div: ";
 	flDiv.print();
 	return 0;
 }
